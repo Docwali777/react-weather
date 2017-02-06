@@ -55,7 +55,7 @@
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory;
 
-	var Main = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Main\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var Main = __webpack_require__(222);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -25408,6 +25408,29 @@
 
 	exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 	module.exports = exports['default'];
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var Main = React.createClass({
+	  displayName: "Main",
+
+
+	  render: function render() {
+	    return React.createElement(
+	      "h1",
+	      null,
+	      "Hello from Main"
+	    );
+	  }
+	});
+
+	module.exports = Main;
 
 /***/ }
 /******/ ]);
