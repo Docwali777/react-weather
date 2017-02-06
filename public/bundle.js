@@ -46,26 +46,21 @@
 
 	"use strict";
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
 
-	var objOne = {
-	  name: "Wali Gauvin",
-	  location: "Annandale"
-	};
+	var _require = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-router\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
+	    Route = _require.Route,
+	    Router = _require.Router,
+	    IndexRoute = _require.IndexRoute,
+	    hashHistory = _require.hashHistory;
 
-	var objTwo = _extends({
-	  age: 40
-	}, objOne);
-
-	console.log(objTwo);
+	var Main = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"Main\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	ReactDOM.render(React.createElement(
-	  "h1",
-	  null,
-	  "Hi... htis is ol ok fixed some bugs"
+	  Router,
+	  { history: hashHistory },
+	  React.createElement(Route, { path: "/", component: Main })
 	), document.getElementById("app"));
 
 /***/ },
