@@ -12,13 +12,10 @@ getInitialState: function(){
 },
 
 handleSearch: function(location){
+  var that = this;
 openWeatherMap.getTemp(location).then(function(temp){
-
-}, function(temp){
-
-})
-// this.setState({location: location,
-//                 temp: 23})
+that.setState({location: location, temp: temp})
+}, function(error){alert(error)})
 },
 
 render: function(){

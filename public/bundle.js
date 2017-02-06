@@ -25517,9 +25517,12 @@
 	  },
 
 	  handleSearch: function handleSearch(location) {
-	    openWeatherMap.getTemp(location).then(function (temp) {}, function (temp) {});
-	    // this.setState({location: location,
-	    //                 temp: 23})
+	    var that = this;
+	    openWeatherMap.getTemp(location).then(function (temp) {
+	      that.setState({ location: location, temp: temp });
+	    }, function (error) {
+	      alert(error);
+	    });
 	  },
 
 	  render: function render() {
@@ -25628,7 +25631,7 @@
 	    var encodedLocation = encodeURIComponent(location);
 	    var requestURL = OPEN_WEATHER_URL + "&q=" + location;
 
-	    axios.get(requestURL).then(function (res) {
+	    return axios.get(requestURL).then(function (res) {
 	      if (res.data.cod && res.data.message) {
 	        throw new Error(res.data.message);
 	      } else {
