@@ -3,8 +3,9 @@ var React = require("react");
 var WeatherMessage = React.createClass({
 
   render: function(){
+    var {temp, location} = this.props
     return(
-      <h1>It is 43 degrees today</h1>
+      <h1>It is {temp} degrees today in {location} </h1>
     )
   }
 });
